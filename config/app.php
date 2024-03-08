@@ -181,6 +181,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -194,6 +195,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -209,7 +211,13 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+         // 'ExampleClass' => App\Example\ExampleClass::class,
+             'Jwt'=> Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+       'JWTFactory'=> Tymon\JWTAuth\Facades\JWTFactory::class,
+         'JWTAuth'=> Tymon\JWTAuth\Facades\JWTAuth::class,
+         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+            
+       
     ])->toArray(),
 
 ];
