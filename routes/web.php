@@ -17,4 +17,9 @@ use App\Http\Controllers\AuthenticationController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/valider', function () {
+    event(new \App\Events\PodcastProcessed('hello world'));
+   
+    return view('welcome');
+});
 
